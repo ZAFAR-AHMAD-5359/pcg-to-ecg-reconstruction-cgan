@@ -22,7 +22,7 @@ It is not a diagnostic ECG, and it does not transfer to new hardware without ret
 | `code/1_preprocessing/` | Notebook (as run) that cuts the PhysioNet EPHNOGRAM records into 8 s segments and writes the subject-level split |
 | `code/2_warm_start_trial2/` | Notebook (as run) of the Trial-2 development run, whose final generator initializes the proposed model |
 | `code/3_proposed_model/` | Training (`TRAIL4_COMPLETE.ipynb`) and test evaluation (`TRAIL4_TEST_EVALUATION.ipynb`) of the proposed model |
-| `code/4_original_baselines/` | Notebooks (as run) for the CNN, U-Net, and WGAN-GP rows in the upper block of Table II |
+| `code/4_original_baselines/` | Notebooks (as run) for the CNN, U-Net, and WGAN-GP rows in the upper block of Table IV |
 | `code/5_revision_experiments/` | Experiments exp1 to exp7: Python sources (`src/`), Colab notebooks built from them (`notebooks/`), and the shared model, metric, and path modules (`shared/`) |
 | `code/6_supplementary_analyses/` | Preprocessing, metric, model, Tanh-gradient, and cross-dataset notebooks of the supplementary material |
 | `code/7_paper_figures/` | Script that draws Fig. 4 from the saved signals |
@@ -65,15 +65,15 @@ segments.
 
 | Paper item | Code | Outputs |
 |---|---|---|
-| Table II, proposed model | `code/3_proposed_model/` | `results/table2_proposed_trail4/` |
-| Table II, upper block (CNN, U-Net, WGAN-GP) | `code/4_original_baselines/` | `results/table2_original_baselines/` |
-| Table II, lower block, and the paired Wilcoxon tests | `exp7_baseline_retrain` | `results/exp7_baseline_retrain/` |
-| Temporal R-peak detection (F1, sensitivity, PPV) | `exp1_R1_1_rpeak_timing` | `results/exp1_rpeak_timing/` |
-| Per-subject correlation and the subject-clustered bootstrap | `exp2_R1_2_baseline_stats` | `results/exp2_baseline_stats/` |
-| Cardiac-cycle boundary error | `exp3_R1_7_boundary_segmentation` | `results/exp3_boundary/` |
-| Blind cross-dataset test (SensSmart-Tech) | `exp4_R1_8_blind_crossdataset` | `results/exp4_blind_crossdataset/` |
-| Parameters, MACs, and latency | `exp5_R2_2_complexity_latency` | `results/exp5_complexity/` |
-| Component ablation (Table V) | `exp6_R1_4_ablation_training` | `results/exp6_ablation/` |
+| Table IV, proposed model | `code/3_proposed_model/` | `results/table4_proposed_trail4/` |
+| Table IV, upper block (CNN, U-Net, WGAN-GP) | `code/4_original_baselines/` | `results/table4_original_baselines/` |
+| Table IV, lower block, and the paired Wilcoxon tests | `exp7_baseline_retrain` | `results/exp7_baseline_retrain/` |
+| Table V, temporal R-peak detection | `exp1_R1_1_rpeak_timing` | `results/exp1_rpeak_timing/` |
+| Table VI, per-subject correlation and the subject-clustered bootstrap | `exp2_R1_2_baseline_stats` | `results/exp2_baseline_stats/` |
+| Table VIII, cardiac-cycle boundary error | `exp3_R1_7_boundary_segmentation` | `results/exp3_boundary/` |
+| Section IV-C, blind cross-dataset test (SensSmart-Tech) | `exp4_R1_8_blind_crossdataset` | `results/exp4_blind_crossdataset/` |
+| Table I, parameters, MACs, and latency | `exp5_R2_2_complexity_latency` | `results/exp5_complexity/` |
+| Table VII, component ablation | `exp6_R1_4_ablation_training` | `results/exp6_ablation/` |
 | Fig. 4 | `code/7_paper_figures/regenerate_fig4.py` | |
 
 The `exp*` notebooks are in `code/5_revision_experiments/notebooks/`. Set the Google Drive paths in
@@ -82,30 +82,30 @@ outputs are in `results/exp4_blind_crossdataset/`.
 
 ## Training history and caveats
 
-- **Warm start.** The proposed model was not trained from a random initialization. Its training
+- **Warm start (paper, Section V-A).** The proposed model was not trained from a random initialization. Its training
   notebook (`TRAIL4_COMPLETE.ipynb`) loads the final generator of the Trial-2 development run,
   which was trained for 150 epochs on the same subject split with a Tanh output layer. It then
   fine-tunes this generator with the BatchNorm output head and polarity correction, and keeps the
   checkpoint with the best validation PSNR. That checkpoint is from the first fine-tuning epoch,
-  as stored in `trail4_best.pt` (`epoch: 1`) and in `results/table2_proposed_trail4/trail4_training_history.json`.
+  as stored in `trail4_best.pt` (`epoch: 1`) and in `results/table4_proposed_trail4/trail4_training_history.json`.
   The release includes the Trial-2 generator weights (`trial2_warm_start_generator_epoch150.pt`).
-  The ablation of Table V trains every variant, including the proposed configuration, from a
+  The ablation of Table VII trains every variant, including the proposed configuration, from a
   random initialization; the proposed configuration reaches 17.58 dB there.
-- **Original baselines.** The checkpoints behind the upper block of Table II were not kept. The
+- **Original baselines (paper, Table IV footnote).** The checkpoints behind the upper block of Table IV were not kept. The
   U-Net values in that block come from a 10-segment test run (`test_samples: 10` in
-  `results/table2_original_baselines/UNet_Baseline/test_results.json`); the CNN and WGAN-GP values
+  `results/table4_original_baselines/UNet_Baseline/test_results.json`); the CNN and WGAN-GP values
   use all 453 segments. The retrained baselines in the release are scored on all 453 segments.
 - **Ablation, proposed row.** The variant with both attention and dilated convolutions was trained
-  twice. Table V reports the run in `results/exp6_ablation/all_results.json` (17.58 dB, correlation
+  twice. Table VII reports the run in `results/exp6_ablation/all_results.json` (17.58 dB, correlation
   0.544). The released `ablation_both.pt` is from the other run (`metrics_both.json`: 17.59 dB,
-  correlation 0.552); the weights of the Table V run were overwritten.
+  correlation 0.552); the weights of the Table VII run were overwritten.
 
 ## Metric conventions
 
 - PSNR, SNR, Pearson correlation, RMSE, and MAE use the z-score-normalized reconstruction and
   reference, with no rescaling of the reconstruction. PSNR = 20 log10(max|reference| / RMSE).
 - SSIM normalizes each signal to [0, 1] by its own range first.
-- In Table II, the R-peak amplitude error and the QRS-width error rescale the reconstruction to the
+- In Table IV, the R-peak amplitude error and the QRS-width error rescale the reconstruction to the
   reference mean and standard deviation, read the amplitude at the ground-truth R-peaks, and average
   over the 301 segments with detected R-peaks. The ablation and exp7 tables report the R-peak
   amplitude error in z-score units, so values from different tables are not comparable.
