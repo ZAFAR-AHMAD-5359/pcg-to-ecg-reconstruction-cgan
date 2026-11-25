@@ -1,0 +1,24 @@
+{
+  "variant": "mhsa",
+  "config": {
+    "use_attention": true,
+    "use_dilated": false,
+    "output": "batchnorm",
+    "adversarial": true,
+    "polarity": true,
+    "params_m": 15.11
+  },
+  "params": 15113219,
+  "n_test_segments": 453,
+  "psnr": 15.09033477964254,
+  "ssim": 0.8856879328532268,
+  "corr": 0.46658364883839887,
+  "rpeak_amp_err": 0.17505221834887338,
+  "rpeak_amp_err_validN": 453,
+  "temporal_f1_50": 0.6067972940193516,
+  "temporal_se_50": 0.7205402291493311,
+  "temporal_ppv_50": 0.5240689013035382,
+  "temporal_f1_150": 0.7011831927337413,
+  "temporal_se_150": 0.8326185751776227,
+  "temporal_ppv_150": 0.605586592178771
+}

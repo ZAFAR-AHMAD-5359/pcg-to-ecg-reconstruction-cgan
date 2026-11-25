@@ -1,0 +1,40 @@
+{
+  "model_name": "UNet_Baseline",
+  "model_config": {
+    "model_name": "UNet_Baseline",
+    "batch_size": 32,
+    "learning_rate": 0.0001,
+    "epochs": 100,
+    "patience": 15,
+    "loss_type": "L1"
+  },
+  "test_samples": 10,
+  "summary_statistics": {
+    "ssim": {
+      "mean": 0.911648030809057,
+      "std": 0
+    },
+    "psnr": {
+      "mean": 16.282392501831055,
+      "std": 0
+    },
+    "correlation": {
+      "mean": 0.5321962237358093,
+      "std": 0
+    },
+    "rmse": {
+      "mean": 0.7550156712532043,
+      "std": 0
+    },
+    "r_peak_error": {
+      "mean": 1.1577578783035278,
+      "std": 0
+    },
+    "qrs_width_error": {
+      "mean": 8.728353225133189,
+      "std": 0
+    }
+  },
+  "best_epoch": 42,
+  "timestamp": "2026-01-21 13:16:21"
+}

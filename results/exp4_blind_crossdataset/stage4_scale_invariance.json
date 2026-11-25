@@ -1,0 +1,9 @@
+{
+  "max_ssim_abs_diff": 2.3575628937955173e-07,
+  "max_corr_abs_diff": 1.1920928955078125e-07,
+  "mean_psnr_gap_db": -2.970916233824555,
+  "synthetic_check": {
+    "ssim_1x_vs_5x_diff": 3.771541998848216e-09,
+    "corr_1x_vs_5x_diff": 5.587935447692871e-09
+  }
+}

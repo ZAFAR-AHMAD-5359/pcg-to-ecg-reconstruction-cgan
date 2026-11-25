@@ -1,0 +1,24 @@
+{
+  "variant": "both",
+  "config": {
+    "use_attention": true,
+    "use_dilated": true,
+    "output": "batchnorm",
+    "adversarial": true,
+    "polarity": true,
+    "params_m": 19.32
+  },
+  "params": 19315715,
+  "n_test_segments": 453,
+  "psnr": 17.589627278561625,
+  "ssim": 0.8693946929418832,
+  "corr": 0.5518284556497028,
+  "rpeak_amp_err": 0.14043341390171785,
+  "rpeak_amp_err_validN": 453,
+  "temporal_f1_50": 0.6535596531933081,
+  "temporal_se_50": 0.856429622991743,
+  "temporal_ppv_50": 0.5283942816523182,
+  "temporal_f1_150": 0.7077787275613627,
+  "temporal_se_150": 0.9274787172758113,
+  "temporal_ppv_150": 0.5722296816997078
+}

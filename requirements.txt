@@ -1,0 +1,9 @@
+torch>=2.0
+numpy
+scipy
+pandas
+scikit-image
+matplotlib
+wfdb
+tqdm
+ptflops

@@ -1,0 +1,24 @@
+{
+  "variant": "msdc",
+  "config": {
+    "use_attention": false,
+    "use_dilated": true,
+    "output": "batchnorm",
+    "adversarial": true,
+    "polarity": true,
+    "params_m": 15.12
+  },
+  "params": 15119363,
+  "n_test_segments": 453,
+  "psnr": 16.05293140223221,
+  "ssim": 0.8847128638080549,
+  "corr": 0.49811480530450547,
+  "rpeak_amp_err": 1.1655448170884555,
+  "rpeak_amp_err_validN": 453,
+  "temporal_f1_50": 0.61626195732156,
+  "temporal_se_50": 0.8577097868527171,
+  "temporal_ppv_50": 0.48089000538309706,
+  "temporal_f1_150": 0.6849705665930832,
+  "temporal_se_150": 0.9533380272674903,
+  "temporal_ppv_150": 0.5345056522519289
+}

@@ -1,0 +1,26 @@
+% ---------------------------------------------------------------------------
+% exp4 (R1.8): blind cross-dataset fidelity.
+% Paste into the manuscript near the cross-dataset paragraph and cite as
+% Table~\ref{tab:blind_crossdataset}. Replace the prior "amplitude transfers"
+% sentence with the honest reading in the caption.
+% ---------------------------------------------------------------------------
+\begin{table}[!t]
+\centering
+\caption{Cross-dataset signal fidelity on SensSmart-Tech (338 records), evaluated
+blind and after target-standard-deviation rescaling. The rescaled PSNR uses the
+ground-truth standard deviation, so it overstates transfer. The blind PSNR is the
+honest number. SSIM and Pearson $r$ are scale-invariant and therefore identical in
+both columns, so the correlation collapse reflects temporal misalignment, not
+amplitude. The mean std ratio is 0.29.}
+\label{tab:blind_crossdataset}
+\begin{tabular}{@{}lccc@{}}
+\toprule
+Metric & EPHNOGRAM & SmartTech (rescaled) & SmartTech (blind) \\
+\midrule
+PSNR (dB)        & 16.92 & 10.67 & 13.64 \\
+SSIM             & 0.903 & 0.721 & 0.721 \\
+Pearson $r$      & 0.610 & -0.075 & -0.075 \\
+R-peak amp. err. & 0.159  & 0.276  & 0.276 \\
+\bottomrule
+\end{tabular}
+\end{table}

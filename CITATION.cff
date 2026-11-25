@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+message: "If you use this code or these weights, please cite the paper below."
+title: "PCG-to-ECG Signal Reconstruction Using Conditional GAN with Multi-Scale Attention: code, weights, and outputs"
+version: 1.0.0
+date-released: 2026-11-25
+license: MIT
+repository-code: "https://github.com/ZAFAR-AHMAD-5359/pcg-to-ecg-reconstruction-cgan"
+authors:
+  - {family-names: Ahmad, given-names: Zafar}
+  - {family-names: Perwaiz, given-names: Nazia}
+  - {family-names: Khan, given-names: Muhammad Salman}
+  - {family-names: Sultana, given-names: Sidra}
+  - {family-names: Abdullah, given-names: Fatima}
+  - {family-names: Anjum, given-names: Hamza}
+  - {family-names: Haq, given-names: Izharul}
+preferred-citation:
+  type: article
+  title: "PCG-to-ECG Signal Reconstruction Using Conditional GAN with Multi-Scale Attention"
+  journal: "IEEE Journal of Biomedical and Health Informatics"
+  year: 2026
+  notes: "Accepted, manuscript JBHI-01557-2026"
+  authors:
+    - {family-names: Ahmad, given-names: Zafar}
+    - {family-names: Perwaiz, given-names: Nazia}
+    - {family-names: Khan, given-names: Muhammad Salman}
+    - {family-names: Sultana, given-names: Sidra}
+    - {family-names: Abdullah, given-names: Fatima}
+    - {family-names: Anjum, given-names: Hamza}
+    - {family-names: Haq, given-names: Izharul}

@@ -1,0 +1,24 @@
+{
+  "variant": "unet_only",
+  "config": {
+    "use_attention": false,
+    "use_dilated": false,
+    "output": "batchnorm",
+    "adversarial": true,
+    "polarity": true,
+    "params_m": 10.92
+  },
+  "params": 10916867,
+  "n_test_segments": 453,
+  "psnr": 14.106036776343718,
+  "ssim": 0.7905930618692335,
+  "corr": 0.4142241187030799,
+  "rpeak_amp_err": 1.3061891020857472,
+  "rpeak_amp_err_validN": 453,
+  "temporal_f1_50": 0.5925673039406946,
+  "temporal_se_50": 0.7776995455418294,
+  "temporal_ppv_50": 0.47862911168012606,
+  "temporal_f1_150": 0.6718201326570425,
+  "temporal_se_150": 0.8817128592459835,
+  "temporal_ppv_150": 0.5426432932834351
+}

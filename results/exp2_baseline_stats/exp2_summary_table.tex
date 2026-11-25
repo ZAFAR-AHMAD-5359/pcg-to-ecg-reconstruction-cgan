@@ -1,0 +1,21 @@
+% ============================================================
+% exp2 main summary table - Reviewer 1, comment 2
+% Per-segment metrics over all 453 EPHNOGRAM test segments.
+% Markers: significance of Proposed vs that baseline,
+%   paired Wilcoxon signed-rank, Holm-Bonferroni corrected.
+%   * p<0.05, ** p<0.01, *** p<0.001; dagger = Proposed worse.
+% FIND the current Table II and REPLACE it with this block (update the label if needed).
+% ============================================================
+\begin{table}[t]
+\centering
+\caption{Per-segment reconstruction quality on the EPHNOGRAM test set ($N=453$ segments, three recordings). Values are mean\,$\pm$\,standard deviation. Significance markers denote the paired Wilcoxon signed-rank comparison of the Proposed model against each baseline, after Holm-Bonferroni correction ($^{*}p<0.05$, $^{**}p<0.01$, $^{***}p<0.001$). Best value per column is in bold.}
+\label{tab:persegment_stats}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lccccc}
+\toprule
+Model & PSNR (dB) & Corr. r & SSIM & RMSE (a.u.) & R-peak amp. err. (a.u.) \\
+\midrule
+Proposed & \textbf{17.10$\pm$5.07} & \textbf{0.610$\pm$0.404} & \textbf{0.903$\pm$0.072} & \textbf{0.695$\pm$0.319} & \textbf{0.995$\pm$0.656} \\
+\bottomrule
+\end{tabular}
+\end{table}

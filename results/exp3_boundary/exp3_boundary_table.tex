@@ -1,0 +1,20 @@
+% ===================================================================
+% exp3 - EPHNOGRAM three-arm cardiac-cycle boundary error (R1.7)
+% Same-dataset true-versus-reconstructed comparison (paired ECG).
+% Paste into the Results section. Requires \usepackage{booktabs}.
+% ===================================================================
+\begin{table}[!t]
+\centering
+\caption{Cardiac-cycle phase-boundary error on the EPHNOGRAM test set. Arm 1 (true ECG) is the gold reference. Errors are the mean absolute time gap between each arm boundary and the gold boundary, in\,ms. The reconstructed-ECG arm recovers R-peak timing, so its boundaries track the gold cycle. The PCG-only arm anchors on S1, so it lags by the electromechanical delay.}
+\label{tab:exp3_boundary}
+\begin{tabular}{lccccc}
+\toprule
+Arm & S1 onset & S2 onset & Systole & Diastole & Mean \\
+ & (ms) & (ms) & (ms) & (ms) & (ms) \\
+\midrule
+True ECG (gold) & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+Reconstructed ECG & 30.2 & 61.7 & 37.4 & 69.2 & 49.6 \\
+PCG-only S1 & 64.5 & 153.8 & 88.3 & 174.3 & 120.2 \\
+\bottomrule
+\end{tabular}
+\end{table}

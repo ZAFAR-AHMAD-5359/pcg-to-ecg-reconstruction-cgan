@@ -1,0 +1,24 @@
+{
+  "variant": "proposed_linear",
+  "config": {
+    "use_attention": true,
+    "use_dilated": true,
+    "output": "linear",
+    "adversarial": true,
+    "polarity": true,
+    "params_m": 19.32
+  },
+  "params": 19315713,
+  "n_test_segments": 453,
+  "psnr": 16.51279472199497,
+  "ssim": 0.7472835129896717,
+  "corr": 0.5209865858495671,
+  "rpeak_amp_err": 0.1410893492532224,
+  "rpeak_amp_err_validN": 453,
+  "temporal_f1_50": 0.5393691938867247,
+  "temporal_se_50": 0.9216539717083787,
+  "temporal_ppv_50": 0.38123858190579574,
+  "temporal_f1_150": 0.5727075217261012,
+  "temporal_se_150": 0.9786212635217307,
+  "temporal_ppv_150": 0.404802880669332
+}

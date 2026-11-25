@@ -1,0 +1,171 @@
+{
+  "n_test_segments": 453,
+  "models_available": [
+    "Proposed"
+  ],
+  "metrics": [
+    "psnr",
+    "corr",
+    "ssim",
+    "rmse",
+    "rpeak_amp_err"
+  ],
+  "overall": [
+    {
+      "model": "Proposed",
+      "n_segments": 453,
+      "psnr_mean": 17.097235726994395,
+      "psnr_std": 5.068589608210729,
+      "psnr_validN": 453,
+      "corr_mean": 0.6100924666075367,
+      "corr_std": 0.40367769205592186,
+      "corr_validN": 453,
+      "ssim_mean": 0.9032230148399322,
+      "ssim_std": 0.07245773492662766,
+      "ssim_validN": 453,
+      "rmse_mean": 0.6950319900812693,
+      "rmse_std": 0.31886061291520984,
+      "rmse_validN": 453,
+      "rpeak_amp_err_mean": 0.9947310960450709,
+      "rpeak_amp_err_std": 0.6559009632814903,
+      "rpeak_amp_err_validN": 453
+    }
+  ],
+  "by_subject": [
+    {
+      "subject_id": "S009",
+      "model": "Proposed",
+      "n_segments": 3,
+      "psnr_mean": 12.355391184488932,
+      "psnr_std": 0.9765681845083852,
+      "psnr_validN": 3,
+      "corr_mean": 0.5972788333892822,
+      "corr_std": 0.09724728029168031,
+      "corr_validN": 3,
+      "ssim_mean": 0.9072608933289669,
+      "ssim_std": 0.017950073443598474,
+      "ssim_validN": 3,
+      "rmse_mean": 0.8604790369669596,
+      "rmse_std": 0.134402640707062,
+      "rmse_validN": 3,
+      "rpeak_amp_err_mean": 1.2848794062932332,
+      "rpeak_amp_err_std": 0.2515791314086978,
+      "rpeak_amp_err_validN": 3
+    },
+    {
+      "subject_id": "S019",
+      "model": "Proposed",
+      "n_segments": 225,
+      "psnr_mean": 12.585913020239936,
+      "psnr_std": 2.1835099560835007,
+      "psnr_validN": 225,
+      "corr_mean": 0.31354293420264084,
+      "corr_std": 0.33950711699270514,
+      "corr_validN": 225,
+      "ssim_mean": 0.8450749800204073,
+      "ssim_std": 0.06039111552556434,
+      "ssim_validN": 225,
+      "rmse_mean": 0.9558997527758281,
+      "rmse_std": 0.1810392525346953,
+      "rmse_validN": 225,
+      "rpeak_amp_err_mean": 1.4883518807093303,
+      "rpeak_amp_err_std": 0.45171980360685127,
+      "rpeak_amp_err_validN": 225
+    },
+    {
+      "subject_id": "S023",
+      "model": "Proposed",
+      "n_segments": 225,
+      "psnr_mean": 21.671783027648925,
+      "psnr_std": 2.30212878223927,
+      "psnr_validN": 225,
+      "corr_mean": 0.9068128474553426,
+      "corr_std": 0.1915706307308888,
+      "corr_validN": 225,
+      "ssim_mean": 0.9613172112796035,
+      "ssim_std": 0.01255093496464143,
+      "ssim_validN": 225,
+      "rmse_mean": 0.43195826676156784,
+      "rmse_std": 0.18434781616515733,
+      "rmse_validN": 225,
+      "rpeak_amp_err_mean": 0.49724166724416946,
+      "rpeak_amp_err_std": 0.4110974840162848,
+      "rpeak_amp_err_validN": 225
+    }
+  ],
+  "by_scenario": [
+    {
+      "scenario_name": "exercise",
+      "model": "Proposed",
+      "n_segments": 450,
+      "psnr_mean": 17.128848023944432,
+      "psnr_std": 5.070184284551948,
+      "psnr_validN": 450,
+      "corr_mean": 0.6101778908289918,
+      "corr_std": 0.40497066631465134,
+      "corr_validN": 450,
+      "ssim_mean": 0.9031960956500051,
+      "ssim_std": 0.07268876975791407,
+      "ssim_validN": 450,
+      "rmse_mean": 0.693929009768698,
+      "rmse_std": 0.319510312689126,
+      "rmse_validN": 450,
+      "rpeak_amp_err_mean": 0.9927967739767498,
+      "rpeak_amp_err_std": 0.6574437899995048,
+      "rpeak_amp_err_validN": 450
+    },
+    {
+      "scenario_name": "rest",
+      "model": "Proposed",
+      "n_segments": 3,
+      "psnr_mean": 12.355391184488932,
+      "psnr_std": 0.9765681845083852,
+      "psnr_validN": 3,
+      "corr_mean": 0.5972788333892822,
+      "corr_std": 0.09724728029168031,
+      "corr_validN": 3,
+      "ssim_mean": 0.9072608933289669,
+      "ssim_std": 0.017950073443598474,
+      "ssim_validN": 3,
+      "rmse_mean": 0.8604790369669596,
+      "rmse_std": 0.134402640707062,
+      "rmse_validN": 3,
+      "rpeak_amp_err_mean": 1.2848794062932332,
+      "rpeak_amp_err_std": 0.2515791314086978,
+      "rpeak_amp_err_validN": 3
+    }
+  ],
+  "paired_wilcoxon": [],
+  "bootstrap_correlation": {
+    "point_estimate_pooled_corr": 0.6100924666075367,
+    "n_segments": 453,
+    "n_subjects": 3,
+    "naive_segment_bootstrap_ci95": [
+      0.572363835499515,
+      0.645840360423984
+    ],
+    "naive_normal_approx_ci95": [
+      0.5729182589556038,
+      0.6472666742594696
+    ],
+    "subject_clustered_bootstrap_ci95": [
+      0.31354293420264084,
+      0.9068128474553426
+    ],
+    "n_boot": 10000,
+    "per_subject": {
+      "S009": {
+        "n": 3,
+        "corr_mean": 0.5972788333892822
+      },
+      "S019": {
+        "n": 225,
+        "corr_mean": 0.31354293420264084
+      },
+      "S023": {
+        "n": 225,
+        "corr_mean": 0.9068128474553426
+      }
+    }
+  }
+}

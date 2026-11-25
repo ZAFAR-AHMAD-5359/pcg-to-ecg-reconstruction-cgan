@@ -1,0 +1,2 @@
+model,n_segments,psnr_mean,psnr_std,psnr_validN,corr_mean,corr_std,corr_validN,ssim_mean,ssim_std,ssim_validN,rmse_mean,rmse_std,rmse_validN,rpeak_amp_err_mean,rpeak_amp_err_std,rpeak_amp_err_validN
+Proposed,453,17.097235726994395,5.068589608210729,453,0.6100924666075367,0.40367769205592186,453,0.9032230148399322,0.07245773492662766,453,0.6950319900812693,0.31886061291520984,453,0.9947310960450709,0.6559009632814903,453

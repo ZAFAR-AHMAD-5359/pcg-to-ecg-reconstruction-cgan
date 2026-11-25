@@ -1,0 +1,188 @@
+{
+  "meta": {
+    "experiment": "exp5_complexity_latency",
+    "reviewer_comment": "R2.2",
+    "segment_samples": 64000,
+    "fs_hz": 8000,
+    "signal_seconds": 8.0,
+    "warmup": 10,
+    "timed_iters": 50,
+    "gpu_name": "Tesla T4",
+    "cpu_only": false,
+    "torch_version": "2.11.0+cu128",
+    "profilers": {
+      "thop": true,
+      "ptflops": false,
+      "fvcore": true
+    },
+    "note": "Only the generator runs at inference; the discriminator is discarded after training. thop and ptflops do not count the bottleneck self-attention matmuls, so fvcore is preferred for the Proposed model where available."
+  },
+  "params": {
+    "CNN": {
+      "params": 9776385,
+      "expected": 9776385,
+      "matches_expected": true,
+      "weights_mb": 39.10554,
+      "checkpoint_loaded": false,
+      "role": "generator"
+    },
+    "U-Net": {
+      "params": 13609345,
+      "expected": 13609345,
+      "matches_expected": true,
+      "weights_mb": 54.43738,
+      "checkpoint_loaded": false,
+      "role": "generator"
+    },
+    "WGAN-GP": {
+      "params": 13609345,
+      "expected": 13609345,
+      "matches_expected": true,
+      "weights_mb": 54.43738,
+      "checkpoint_loaded": false,
+      "role": "generator"
+    },
+    "Proposed": {
+      "params": 19315715,
+      "expected": 19315715,
+      "matches_expected": true,
+      "weights_mb": 77.26286,
+      "checkpoint_loaded": true,
+      "role": "generator"
+    },
+    "Discriminator": {
+      "params": 2176833,
+      "expected": 2176833,
+      "matches_expected": true,
+      "weights_mb": 8.707332,
+      "checkpoint_loaded": false,
+      "role": "discriminator"
+    }
+  },
+  "macs": {
+    "CNN": {
+      "macs": 22911488000.0,
+      "gmac": 22.911488,
+      "gflop": 45.822976,
+      "backend": "thop",
+      "per_backend_gmac": {
+        "thop": 22.911488,
+        "fvcore": 15.260928
+      }
+    },
+    "U-Net": {
+      "macs": 37599232000.0,
+      "gmac": 37.599232,
+      "gflop": 75.198464,
+      "backend": "thop",
+      "per_backend_gmac": {
+        "thop": 37.599232,
+        "fvcore": 22.6048
+      }
+    },
+    "WGAN-GP": {
+      "macs": 37599232000.0,
+      "gmac": 37.599232,
+      "gflop": 75.198464,
+      "backend": "thop",
+      "per_backend_gmac": {
+        "thop": 37.599232,
+        "fvcore": 22.6048
+      }
+    },
+    "Proposed": {
+      "macs": 62734464192.0,
+      "gmac": 62.734464192,
+      "gflop": 125.468928384,
+      "backend": "fvcore",
+      "per_backend_gmac": {
+        "thop": 52.185344192,
+        "fvcore": 62.734464192
+      }
+    },
+    "Discriminator": {
+      "macs": 7267329216.0,
+      "gmac": 7.267329216,
+      "gflop": 14.534658432,
+      "backend": "thop",
+      "per_backend_gmac": {
+        "thop": 7.267329216,
+        "fvcore": 7.251968704
+      }
+    }
+  },
+  "latency": {
+    "CNN": {
+      "cpu": {
+        "mean_ms": 430.2541273600036,
+        "std_ms": 65.9838031438315,
+        "rtf": 18.59366242245531,
+        "peak_mem_mb": NaN,
+        "n_timed": 50,
+        "n_warmup": 10
+      },
+      "gpu": {
+        "mean_ms": 11.609610290527344,
+        "std_ms": 0.1550705700474792,
+        "rtf": 689.0842844679686,
+        "peak_mem_mb": 64.503808,
+        "n_timed": 50,
+        "n_warmup": 10
+      }
+    },
+    "U-Net": {
+      "cpu": {
+        "mean_ms": 668.9391022800021,
+        "std_ms": 121.95856556121802,
+        "rtf": 11.959235112333722,
+        "peak_mem_mb": NaN,
+        "n_timed": 50,
+        "n_warmup": 10
+      },
+      "gpu": {
+        "mean_ms": 16.810750846862792,
+        "std_ms": 0.19094738768758324,
+        "rtf": 475.8859418520829,
+        "peak_mem_mb": 137.132032,
+        "n_timed": 50,
+        "n_warmup": 10
+      }
+    },
+    "WGAN-GP": {
+      "cpu": {
+        "mean_ms": 670.1017404399977,
+        "std_ms": 106.43293877284583,
+        "rtf": 11.93848563167004,
+        "peak_mem_mb": NaN,
+        "n_timed": 50,
+        "n_warmup": 10
+      },
+      "gpu": {
+        "mean_ms": 17.45056896209717,
+        "std_ms": 1.1456796230115502,
+        "rtf": 458.4377745720549,
+        "peak_mem_mb": 137.132032,
+        "n_timed": 50,
+        "n_warmup": 10
+      }
+    },
+    "Proposed": {
+      "cpu": {
+        "mean_ms": 4100.675233300009,
+        "std_ms": 395.66428662695796,
+        "rtf": 1.9508982167217421,
+        "peak_mem_mb": NaN,
+        "n_timed": 50,
+        "n_warmup": 10
+      },
+      "gpu": {
+        "mean_ms": 68.38501556396484,
+        "std_ms": 1.3080095971835661,
+        "rtf": 116.9846922461704,
+        "peak_mem_mb": 404.175872,
+        "n_timed": 50,
+        "n_warmup": 10
+      }
+    }
+  }
+}

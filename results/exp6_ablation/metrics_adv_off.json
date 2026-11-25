@@ -1,0 +1,24 @@
+{
+  "variant": "adv_off",
+  "config": {
+    "use_attention": true,
+    "use_dilated": true,
+    "output": "batchnorm",
+    "adversarial": false,
+    "polarity": true,
+    "params_m": 19.32
+  },
+  "params": 19315715,
+  "n_test_segments": 453,
+  "psnr": 17.72178333477995,
+  "ssim": 0.8839577273606443,
+  "corr": 0.5490138739615753,
+  "rpeak_amp_err": 0.16327303008404592,
+  "rpeak_amp_err_validN": 453,
+  "temporal_f1_50": 0.6804827299209322,
+  "temporal_se_50": 0.7849964795493823,
+  "temporal_ppv_50": 0.6005288414455,
+  "temporal_f1_150": 0.7553890969621306,
+  "temporal_se_150": 0.8714075401651411,
+  "temporal_ppv_150": 0.6666340221329938
+}

@@ -1,0 +1,43 @@
+{
+  "description": "Same-dataset true-versus-reconstructed cardiac-cycle boundary study on the EPHNOGRAM test set. EPHNOGRAM provides paired ECG, so arm 1 (true ECG) is a genuine gold reference on the same signals.",
+  "phase_model_fractions": {
+    "S1": 0.0,
+    "systole": 0.15,
+    "S2": 0.5,
+    "diastole": 0.6
+  },
+  "fs_hz": 8000,
+  "match_tolerance_ms": 150.0,
+  "rpeak_distance_samples": 400,
+  "rpeak_prominence": 0.5,
+  "n_test_segments": 453,
+  "n_segments_with_gold": 453,
+  "arms": {
+    "arm2_reconstructed_ecg": {
+      "S1_err_ms_mean": 30.19118397300055,
+      "S1_err_ms_std": 38.720133769819505,
+      "systole_err_ms_mean": 37.35215299034612,
+      "systole_err_ms_std": 41.11813085716248,
+      "S2_err_ms_mean": 61.74260752688172,
+      "S2_err_ms_std": 65.33417450656447,
+      "diastole_err_ms_mean": 69.2183384349737,
+      "diastole_err_ms_std": 74.80589975827374,
+      "mean_abs_boundary_err_ms": 49.626070731300516,
+      "boundary_err_ms_std": 59.40003732984791,
+      "n_matched_cycles": 12741
+    },
+    "arm3_pcg_only_s1": {
+      "S1_err_ms_mean": 64.53168505384818,
+      "S1_err_ms_std": 38.55128223244033,
+      "systole_err_ms_mean": 88.28730791962175,
+      "systole_err_ms_std": 50.953661479831865,
+      "S2_err_ms_mean": 153.77454360388757,
+      "S2_err_ms_std": 103.62072788413928,
+      "diastole_err_ms_mean": 174.25139217231418,
+      "diastole_err_ms_std": 119.16722092537702,
+      "mean_abs_boundary_err_ms": 120.2112321874179,
+      "boundary_err_ms_std": 96.4193217726231,
+      "n_matched_cycles": 7614
+    }
+  }
+}
